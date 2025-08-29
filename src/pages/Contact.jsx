@@ -1,14 +1,12 @@
 import { useState } from "react";
-import { MailIcon, PhoneIcon } from "@heroicons/react/24/outline";
+import { MailIcon } from "@heroicons/react/24/outline";
 import { FaFacebookF, FaSnapchatGhost, FaLinkedinIn } from "react-icons/fa";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,23 +41,19 @@ export default function Contact() {
           <ul className="space-y-4 text-purple-800">
             <li className="flex items-center gap-3">
               <MailIcon className="w-6 h-6 text-purple-600" />
-              <a href="mailto:yourname@example.com" className="underline">yourname@example.com</a>
+              <a href="mailto:youremail@example.com" className="underline">youremail@example.com</a>
             </li>
             <li className="flex items-center gap-3">
               <FaFacebookF className="w-6 h-6 text-blue-600" />
-              <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" className="underline">
-                facebook.com/yourprofile
-              </a>
+              <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" className="underline">facebook.com/yourprofile</a>
             </li>
             <li className="flex items-center gap-3">
               <FaSnapchatGhost className="w-6 h-6 text-yellow-400" />
-              <span>your_snapchat_username</span>
+              <a href="https://snapchat.com/add/yourusername" target="_blank" rel="noopener noreferrer">your_snapchat_username</a>
             </li>
             <li className="flex items-center gap-3">
               <FaLinkedinIn className="w-6 h-6 text-blue-700" />
-              <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="underline">
-                linkedin.com/in/yourprofile
-              </a>
+              <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="underline">linkedin.com/in/yourprofile</a>
             </li>
           </ul>
         </div>
@@ -104,7 +98,11 @@ export default function Contact() {
             </button>
           </form>
 
-          {status && <p className="mt-4 text-center text-sm text-gray-700">{status}</p>}
+          {status && (
+            <p className={`mt-4 text-center text-sm ${status.includes('✅') ? 'text-green-600' : 'text-red-600'}`}>
+              {status}
+            </p>
+          )}
         </div>
       </div>
     </div>

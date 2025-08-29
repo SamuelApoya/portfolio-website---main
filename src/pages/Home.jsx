@@ -1,14 +1,10 @@
-import React from 'react'
-import profile from '../assets/profile.jpg'
+import React from "react";
 
-function Home() {
+export default function Home() {
   return (
-    <section id="home" className="home">
-      <img src={profile} alt="My portrait" className="profile-pic" />
-      <h2>Hello, I'm [Your Name]</h2>
-      <p>Welcome to my purple-themed portfolio!</p>
-    </section>
-  )
+    <div className="p-8 text-center">
+      <h1 className="text-4xl font-bold text-purple-700 mb-4">Welcome to My Portfolio</h1>
+      <p className="text-lg text-gray-700">This is the home page of my portfolio website.</p>
+    </div>
+  );
 }
-
-export default Home
