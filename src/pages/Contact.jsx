@@ -21,7 +21,7 @@ export default function Contact() {
 
       if (res.ok) {
         setStatus("✅ Message sent successfully!");
-        setForm({ name: "", email: "", message: "" }); // clear form
+        setForm({ name: "", email: "", message: "" });
       } else {
         setStatus("❌ Failed to send message. Try again.");
       }
@@ -32,11 +32,11 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-purple-100">
-      <div className="bg-white shadow-lg rounded-2xl p-8 max-w-lg w-full">
-        <h1 className="text-2xl font-bold text-purple-700 mb-6">Contact Me</h1>
-        
-        <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="min-h-screen bg-purple-100 p-8">
+      <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-2xl p-8">
+        <h1 className="text-3xl font-bold text-purple-700 mb-6">Contact Me</h1>
+
+        <form onSubmit={handleSubmit} className="space-y-4 mb-6">
           <input
             type="text"
             name="name"
@@ -74,7 +74,14 @@ export default function Contact() {
           </button>
         </form>
 
-        {status && <p className="mt-4 text-center text-sm text-gray-700">{status}</p>}
+        {status && <p className="text-center text-sm text-gray-700 mb-6">{status}</p>}
+
+        <div className="text-center space-y-2">
+          <p>Email: <a href="mailto:your-email@example.com" className="text-purple-700 underline">your-email@example.com</a></p>
+          <p>Facebook: <a href="https://facebook.com/yourprofile" target="_blank" className="text-purple-700 underline">facebook.com/yourprofile</a></p>
+          <p>Snapchat: <a href="https://snapchat.com/add/yourprofile" target="_blank" className="text-purple-700 underline">snapchat.com/add/yourprofile</a></p>
+          <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" className="text-purple-700 underline">linkedin.com/in/yourprofile</a></p>
+        </div>
       </div>
     </div>
   );
