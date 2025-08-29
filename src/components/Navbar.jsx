@@ -1,16 +1,26 @@
-import React from 'react'
+// App.jsx
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Portfolio from "./pages/Portfolio";
+import Contact from "./pages/Contact";
 
-function Navbar() {
+function App() {
   return (
-    <nav className="navbar">
-      <h1 className="logo">My Portfolio</h1>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  )
+    <Router>
+      <Navbar />
+      <main className="min-h-screen">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+      <Footer />
+    </Router>
+  );
 }
 
-export default Navbar
+export default App;

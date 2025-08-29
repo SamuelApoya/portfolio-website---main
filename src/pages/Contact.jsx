@@ -1,110 +1,105 @@
-import { useState } from "react";
-import { MailIcon } from "@heroicons/react/24/outline";
-import { FaFacebookF, FaSnapchatGhost, FaLinkedinIn } from "react-icons/fa";
+// pages/Contact.jsx
+import React, { useState } from 'react'
 
-export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState("");
+function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus("Sending...");
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      if (res.ok) {
-        setStatus("✅ Message sent successfully!");
-        setForm({ name: "", email: "", message: "" });
-      } else {
-        setStatus("❌ Failed to send message. Try again.");
-      }
-    } catch (err) {
-      console.error(err);
-      setStatus("❌ Error sending message.");
-    }
+    // Add your form submission logic here
+    console.log('Form submitted:', formData);
+    alert('Message sent! Thank you for reaching out.');
+    setFormData({ name: '', email: '', message: '' });
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-purple-100 p-6">
-      <div className="bg-white shadow-lg rounded-2xl p-8 max-w-5xl w-full grid md:grid-cols-2 gap-8">
-        
-        {/* Contact Info */}
-        <div className="space-y-6">
-          <h1 className="text-2xl font-bold text-purple-700">Contact Me</h1>
-          <ul className="space-y-4 text-purple-800">
-            <li className="flex items-center gap-3">
-              <MailIcon className="w-6 h-6 text-purple-600" />
-              <a href="mailto:youremail@example.com" className="underline">youremail@example.com</a>
-            </li>
-            <li className="flex items-center gap-3">
-              <FaFacebookF className="w-6 h-6 text-blue-600" />
-              <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" className="underline">facebook.com/yourprofile</a>
-            </li>
-            <li className="flex items-center gap-3">
-              <FaSnapchatGhost className="w-6 h-6 text-yellow-400" />
-              <a href="https://snapchat.com/add/yourusername" target="_blank" rel="noopener noreferrer">your_snapchat_username</a>
-            </li>
-            <li className="flex items-center gap-3">
-              <FaLinkedinIn className="w-6 h-6 text-blue-700" />
-              <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="underline">linkedin.com/in/yourprofile</a>
-            </li>
-          </ul>
+    <div className="contact">
+      <div className="contact-header">
+        <h1>Contact Me</h1>
+        <p>Let's connect! Feel free to reach out through the form below or connect with me on social media.</p>
+      </div>
+
+      <div className="contact-content">
+        <div className="contact-form-section">
+          <h2>Send me a message</h2>
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <div className="form-group">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                rows="6"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              ></textarea>
+            </div>
+            <button type="submit" className="submit-btn">Send Message</button>
+          </form>
         </div>
 
-        {/* Contact Form */}
-        <div>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={form.name}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
-              required
-            />
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={form.email}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
-              required
-            />
-
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              value={form.message}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg p-3 h-32 focus:outline-none focus:ring-2 focus:ring-purple-500"
-              required
-            />
-
-            <button
-              type="submit"
-              className="w-full bg-purple-600 text-white font-semibold py-3 rounded-lg hover:bg-purple-700 transition"
-            >
-              Send Message
-            </button>
-          </form>
-
-          {status && (
-            <p className={`mt-4 text-center text-sm ${status.includes('✅') ? 'text-green-600' : 'text-red-600'}`}>
-              {status}
-            </p>
-          )}
+        <div className="social-section">
+          <h2>Connect with me</h2>
+          <div className="social-links">
+            <a href="mailto:your-email@example.com" className="social-link email">
+              <span className="social-icon">📧</span>
+              <span>your-email@example.com</span>
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" className="social-link linkedin" target="_blank" rel="noopener noreferrer">
+              <span className="social-icon">💼</span>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/yourusername" className="social-link github" target="_blank" rel="noopener noreferrer">
+              <span className="social-icon">⚡</span>
+              <span>GitHub</span>
+            </a>
+            <a href="https://facebook.com/yourprofile" className="social-link facebook" target="_blank" rel="noopener noreferrer">
+              <span className="social-icon">📘</span>
+              <span>Facebook</span>
+            </a>
+            <a href="https://snapchat.com/add/yourprofile" className="social-link snapchat" target="_blank" rel="noopener noreferrer">
+              <span className="social-icon">👻</span>
+              <span>Snapchat</span>
+            </a>
+            <a href="https://twitter.com/yourusername" className="social-link twitter" target="_blank" rel="noopener noreferrer">
+              <span className="social-icon">🐦</span>
+              <span>Twitter</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
+
+export default Contact
