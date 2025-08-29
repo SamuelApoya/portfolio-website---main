@@ -1,0 +1,74 @@
+:root {
+  --purple: #6C63FF;
+  --purple-light: #F3EFFF;
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--purple-light);
+  color: var(--text-dark);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--purple);
+  padding: 1rem 2rem;
+}
+
+.navbar .logo {
+  color: var(--text-light);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+.home {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.profile-pic {
+  width: 150px;
+  border-radius: 50%;
+  border: 4px solid var(--purple);
+}
+
+.about, .contact {
+  padding: 3rem 1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.project-card {
+  border: 1px solid var(--purple);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: #fff;
+}
+
+.project-card h3 {
+  margin-top: 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--purple);
+  color: var(--text-light);
+}
