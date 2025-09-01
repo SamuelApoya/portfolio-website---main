@@ -24,7 +24,7 @@ function LiveDemo() {
     {
       title: "Curriculum Learning Assistant", 
       description: "Experience Curriculum Learning Assistant's intelligent learning features, including personalized activity recommendations, adaptive knowledge tracking, and real-time progress visualization.",
-      videoId: "", // Replace with your YouTube video ID
+      videoId: "",
       githubLink: "https://github.com/SamuelApoya/Curriculum-Learning-Agent"
     }
   ];
