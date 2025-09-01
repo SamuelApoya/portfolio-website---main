@@ -16,22 +16,22 @@ function Portfolio() {
     },
     {
       title: "MLArt Description", 
-      description: "A responsive task management application with drag-and-drop functionality.",
-      link: "https://github.com/yourusername/task-manager",
+      description: "A research project at the Insite Lab where I worked as a Research Assistant, exploring how blind and low-vision users experience visual art through textual descriptions. I helped design and build a full-stack system that generates AI-powered art descriptions and adapts them to different accessibility needs.",
+      link: "https://github.com/SamuelApoya/MLArtConnected",
       image: mlartImg
     },
 
     {
       title: "Portfolio Analyzer", 
-      description: "A responsive task management application with drag-and-drop functionality.",
-      link: "https://github.com/yourusername/task-manager",
+      description: "A web-based tool that evaluates investment portfolios by calculating risk metrics, visualizing asset allocation, and simulating market scenarios. It helps users understand potential returns and risks, supporting smarter financial decision-making.",
+      link: "https://github.com/SamuelApoya/Portfolio-risk-analyzer",
       image: portfolioAnalyzertImg
     },
 
     {
-      title: "SmartCart", 
-      description: "A responsive task management application with drag-and-drop functionality.",
-      link: "https://github.com/yourusername/task-manager",
+      title: "curriculum Learning Assistant", 
+      description: "An intelligent tutoring system powered by reinforcement learning that adapts to student strengths and weaknesses. It uses a Deep Q-Network to personalize activity selection and features interactive dashboards to visualize progress and learning trends.",
+      link: "https://github.com/SamuelApoya/Curriculum-Learning-Agent",
       image: SmartCartImg
     }
   ];

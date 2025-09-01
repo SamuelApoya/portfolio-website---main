@@ -1,7 +1,14 @@
-// src/components/ProjectCard.jsx
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function ProjectCard({ title, description, link, image }) {
+  const navigate = useNavigate();
+
+  const handleLiveDemoClick = (e) => {
+    e.preventDefault();
+    navigate('/live-demo');
+  };
+
   return (
     <div className="project-card">
       <div className="project-image">
@@ -14,7 +21,7 @@ function ProjectCard({ title, description, link, image }) {
           <a href={link} target="_blank" rel="noopener noreferrer" className="project-link">
             View Project
           </a>
-          <a href={link} target="_blank" rel="noopener noreferrer" className="demo-link">
+          <a href="#" onClick={handleLiveDemoClick} className="demo-link">
             Live Demo
           </a>
         </div>

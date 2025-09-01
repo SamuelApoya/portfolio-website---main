@@ -18,14 +18,16 @@ function Home() {
           }}
         />
         <h1>Samuel Apoya</h1>
-        <p className="welcome-text">Welcome to my portfolio!</p>
+        <p className="welcome-text">Technological leadership is the driving force for innovation!</p>
+        <p style={{ fontStyle: 'italic', marginTop: '0.5rem', fontSize: '1rem', color: '#666' }}>— Samuel Apoya</p>
       </div>
       
       <section className="about-section">
         <h2>About Me</h2>
-        <p>I'm a developer passionate about building cool projects with React and making ideas come alive. 
-           I love creating innovative solutions and turning concepts into reality through clean, efficient code.</p>
-        <p>With experience in modern web technologies, I focus on creating user-friendly applications 
+        <p>I'm a versatile Computer Scientist passionate about AI/ML and Software Engineering.
+           I enjoy solving complex problems through clean, impactful code and believe that technology can drive meaningful innovation. Beyond tech, I explore economic theory, play piano, and hike
+           — my favorite sources of creativity and fresh ideas.</p>
+        <p>With experience in modern technologies, I focus on creating user-friendly applications 
            that solve real-world problems. My passion lies in continuous learning and staying up-to-date 
            with the latest industry trends.</p>
       </section>
