@@ -1,32 +1,38 @@
-// pages/Portfolio.jsx
+// src/pages/Portfolio.jsx
 import React from 'react'
-import ProjectCard from '../components/ProjectCard'
+import ProjectCard from '../components/ProjectCard.jsx'
+import spotlightImg from '../assets/spotlightIcon.png'
+import mlartImg from '../assets/MLArt Review.png'
+import portfolioAnalyzertImg from '../assets/PortfolioRiskAnalyzer.png'
+import SmartCartImg from '../assets/Curriculum.jpg'
 
 function Portfolio() {
   const projects = [
     {
-      title: "E-commerce Website",
-      description: "A full-stack e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, payment integration, and admin dashboard.",
-      link: "https://github.com/yourusername/ecommerce-project",
-      image: "/project1.jpg"
+      title: "Spotlight App",
+      description: "A full-stack social media platform built with React, Node.js, and hosted on Google Cloud (Firebase) that enables users to engage in friendly challenges. It addresses the problem of shallow online interactions by using challenges as the core mechanic to spark creativity, drive participation, and strengthen community connections.",
+      link: "https://github.com/SamuelApoya/SpotlightApp",
+      image: spotlightImg
     },
     {
-      title: "Task Management App",
-      description: "A responsive task management application with drag-and-drop functionality, built using React and Firebase for real-time updates.",
+      title: "MLArt Description", 
+      description: "A responsive task management application with drag-and-drop functionality.",
       link: "https://github.com/yourusername/task-manager",
-      image: "/project2.jpg"
+      image: mlartImg
     },
+
     {
-      title: "Weather Dashboard",
-      description: "An interactive weather dashboard that displays current weather and forecasts using OpenWeather API, built with React and Chart.js.",
-      link: "https://github.com/yourusername/weather-dashboard",
-      image: "/project3.jpg"
+      title: "Portfolio Analyzer", 
+      description: "A responsive task management application with drag-and-drop functionality.",
+      link: "https://github.com/yourusername/task-manager",
+      image: portfolioAnalyzertImg
     },
+
     {
-      title: "Social Media Clone",
-      description: "A social media application with real-time messaging, post sharing, and user profiles. Built with React, Express, and Socket.io.",
-      link: "https://github.com/yourusername/social-clone",
-      image: "/project4.jpg"
+      title: "SmartCart", 
+      description: "A responsive task management application with drag-and-drop functionality.",
+      link: "https://github.com/yourusername/task-manager",
+      image: SmartCartImg
     }
   ];
 
@@ -34,7 +40,7 @@ function Portfolio() {
     <div className="portfolio">
       <div className="portfolio-header">
         <h1>My Portfolio</h1>
-        <p>Here are some of the projects I've worked on. Each project showcases different skills and technologies.</p>
+        <p>Here are some of the projects I've worked on.</p>
       </div>
       
       <div className="projects-grid">

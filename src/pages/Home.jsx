@@ -1,12 +1,23 @@
-// pages/Home.jsx
+// src/pages/Home.jsx
 import React from 'react'
+import profilePic from '../assets/profile.jpg'
 
 function Home() {
   return (
     <div className="home">
-      <div className="hero-section">
-        <img src="/profile.jpg" alt="My portrait" className="profile-pic" />
-        <h1>Hello, I'm [Your Name]</h1>
+      <div className="hero-section" style={{ textAlign: 'center' }}>
+        <img
+          src={profilePic}
+          alt="My portrait"
+          className="profile-pic"
+          style={{
+            width: '120px',
+            height: '120px',
+            borderRadius: '50%',
+            marginBottom: '15px'
+          }}
+        />
+        <h1>Samuel Apoya</h1>
         <p className="welcome-text">Welcome to my portfolio!</p>
       </div>
       

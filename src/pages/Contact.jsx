@@ -1,5 +1,9 @@
-// pages/Contact.jsx
+// src/pages/Contact.jsx
 import React, { useState } from 'react'
+import { SiGmail } from 'react-icons/si';
+import { FaLinkedin } from 'react-icons/fa';
+import { FaGithub } from "react-icons/fa";
+
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -17,7 +21,6 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
     console.log('Form submitted:', formData);
     alert('Message sent! Thank you for reaching out.');
     setFormData({ name: '', email: '', message: '' });
@@ -71,29 +74,17 @@ function Contact() {
         <div className="social-section">
           <h2>Connect with me</h2>
           <div className="social-links">
-            <a href="mailto:your-email@example.com" className="social-link email">
-              <span className="social-icon">📧</span>
-              <span>your-email@example.com</span>
+            <a href="mailto:sapoya26@colby.edu" className="social-link email">
+              <SiGmail className='social-icon' />
+              <span>sapoya26@colby.edu</span>
             </a>
-            <a href="https://linkedin.com/in/yourprofile" className="social-link linkedin" target="_blank" rel="noopener noreferrer">
-              <span className="social-icon">💼</span>
+            <a href="https://www.linkedin.com/in/samuel-apoya/" className="social-link linkedin" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin className="social-icon" />
               <span>LinkedIn</span>
             </a>
-            <a href="https://github.com/yourusername" className="social-link github" target="_blank" rel="noopener noreferrer">
-              <span className="social-icon">⚡</span>
+            <a href="https://github.com/SamuelApoya" className="social-link github" target="_blank" rel="noopener noreferrer">
+              <span className="social-icon"><FaGithub/></span>
               <span>GitHub</span>
-            </a>
-            <a href="https://facebook.com/yourprofile" className="social-link facebook" target="_blank" rel="noopener noreferrer">
-              <span className="social-icon">📘</span>
-              <span>Facebook</span>
-            </a>
-            <a href="https://snapchat.com/add/yourprofile" className="social-link snapchat" target="_blank" rel="noopener noreferrer">
-              <span className="social-icon">👻</span>
-              <span>Snapchat</span>
-            </a>
-            <a href="https://twitter.com/yourusername" className="social-link twitter" target="_blank" rel="noopener noreferrer">
-              <span className="social-icon">🐦</span>
-              <span>Twitter</span>
             </a>
           </div>
         </div>
