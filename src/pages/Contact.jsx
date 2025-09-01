@@ -1,9 +1,8 @@
 // src/pages/Contact.jsx
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { SiGmail } from 'react-icons/si';
 import { FaLinkedin } from 'react-icons/fa';
-import { FaGithub } from "react-icons/fa";
-
+import { FaGithub } from 'react-icons/fa';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -19,11 +18,26 @@ function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Message sent! Thank you for reaching out.');
-    setFormData({ name: '', email: '', message: '' });
+
+    try {
+      const response = await fetch("/api/sendMessage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Message sent! Thank you for reaching out.");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        alert("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("Error sending message. Please try again later.");
+    }
   };
 
   return (
@@ -90,7 +104,7 @@ function Contact() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Contact
+export default Contact;
