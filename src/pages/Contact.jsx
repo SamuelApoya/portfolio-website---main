@@ -22,7 +22,7 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch("/api/sendMessage", {
+      const response = await fetch("/api/submitMessage", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

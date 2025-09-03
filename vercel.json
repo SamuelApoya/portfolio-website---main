@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/submitMessage.js": {
+      "maxDuration": 10
+    }
+  }
+}
